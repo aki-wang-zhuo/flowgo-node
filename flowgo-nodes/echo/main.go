@@ -32,6 +32,25 @@ var Def = types.ComponentDef{
 		types.LocaleEnUS: "Sample plugin: prepend prefix to message data.",
 	},
 	Usage: `configuration.prefix 为要追加到 data 前面的字符串，默认 "[echo] "。`,
+	// Doc/Docs：仅二进制安装时的内嵌回退；zip 中的 MD 复制到 data/docs 后优先于本字段。
+	Doc: `# 插件回显
+
+示例插件节点：在消息内容前追加可配置前缀。
+
+## 配置
+
+prefix：追加到 data 前面的字符串。
+`,
+	Docs: map[string]string{
+		types.LocaleEnUS: `# Plugin Echo
+
+Sample plugin: prepend prefix to message data.
+
+## Configuration
+
+prefix: string prepended to data.
+`,
+	},
 	ConfigFields: []types.ConfigField{
 		{
 			Name: "prefix", Type: "string", Default: "[echo] ", Widget: types.WidgetText,

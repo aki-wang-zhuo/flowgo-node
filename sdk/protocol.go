@@ -58,6 +58,9 @@ type WireDef struct {
 	Description    string               `json:"description,omitempty"`
 	Descriptions   map[string]string    `json:"descriptions,omitempty"`
 	Usage          string               `json:"usage,omitempty"`
+	// Doc / Docs：二进制内嵌的编辑器 Markdown；磁盘 MD 优先于本字段。
+	Doc            string               `json:"doc,omitempty"`
+	Docs           map[string]string    `json:"docs,omitempty"`
 	ConfigFields   []types.ConfigField  `json:"configFields,omitempty"`
 	Actions        types.NodeActions    `json:"actions,omitempty"`
 }
@@ -79,6 +82,8 @@ func ToWire(d types.ComponentDef) WireDef {
 		Description:    d.Description,
 		Descriptions:   d.Descriptions,
 		Usage:          d.Usage,
+		Doc:            d.Doc,
+		Docs:           d.Docs,
 		ConfigFields:   d.ConfigFields,
 		Actions:        d.Actions,
 	}
@@ -106,6 +111,8 @@ func FromWire(w WireDef) types.ComponentDef {
 		Description:    w.Description,
 		Descriptions:   w.Descriptions,
 		Usage:          w.Usage,
+		Doc:            w.Doc,
+		Docs:           w.Docs,
 		Source:         types.ComponentSourcePlugin,
 		ConfigFields:   w.ConfigFields,
 		Actions:        w.Actions,
