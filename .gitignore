@@ -1,0 +1,27 @@
+# 节点插件编译产物（如 echo.exe）
+**/dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+/bin/
+
+# Go
+/vendor/
+
+# IDE / 系统
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# 环境与密钥
+.env
+.env.*
+*.pem
+*.key
